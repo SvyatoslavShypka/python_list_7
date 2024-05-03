@@ -12,14 +12,12 @@ def median(lista):
     # Sortujemy listę
     lista_posortowana = sorted(lista)
     n = len(lista_posortowana)
-    # Jeśli lista ma parzystą ilość - wynikiem będzie średnią arytmetyczną dwóch środkowych elementów
-    if n % 2 == 0:
-        middle_left = lista_posortowana[n // 2 - 1]
-        middle_right = lista_posortowana[n // 2]
-        return (middle_left + middle_right) / 2
-    else:
-        # Jeśli lista ma nieparzystą ilość - wynikiem będzie środkowy element
-        return lista_posortowana[n // 2]
+    # Obliczamy indeksy środkowych elementów
+    middle_left_index = n // 2 - 1 if n % 2 == 0 else n // 2
+    middle_right_index = n // 2 if n % 2 == 0 else None
+    # Obliczamy medianę
+    median_value = (lista_posortowana[middle_left_index] + lista_posortowana[middle_right_index]) / 2 if middle_right_index else lista_posortowana[middle_left_index]
+    return median_value
 
 
 def pierwiastek(x, epsilon=0.0001, y=None):
@@ -30,3 +28,31 @@ def pierwiastek(x, epsilon=0.0001, y=None):
         return y
     # Ulepszanie przybliżenia za pomocą rekurencji
     return pierwiastek(x, epsilon, 0.5 * (y + x / y))
+
+
+def make_alpha_dict(text):
+    wynik = {}
+    # Dzielimy na słowa
+    slowa = text.split()
+    # Unikatowe znaki występujących w tekście
+    znaki_unikatowe = set(c for slowo in slowa for c in slowo if c.isalpha())
+    # Iteracja po unikatowych znakach i tworzenie list słów zawierających ten znak
+    for znak in znaki_unikatowe:
+        wynik[znak] = [slowo for slowo in slowa if znak in slowo]
+
+    return wynik
+
+
+def flatten(lista):
+    wynik = []
+
+    # Rekurencyjnie spłaszczamy listę
+    def flatten_rekurencja(zagniezdziona_lista):
+        for item in zagniezdziona_lista:
+            if isinstance(item, (list, tuple)):
+                flatten_rekurencja(item)  # Rekurencyjne wywołanie
+            else:
+                wynik.append(item)  # Dodanie elementu skalaru do wynikowej listy
+
+    flatten_rekurencja(lista)
+    return wynik

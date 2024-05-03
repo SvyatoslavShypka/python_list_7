@@ -19,3 +19,13 @@ if __name__ == '__main__':
     print("pierwiastek(3): ", pierwiastek(3))
 
     print()
+    print("Test 7_1_d słownik unikatowych znaków")
+    print("make_alpha_dict(\"on i ona\"): ", make_alpha_dict("on i ona"))
+    print("make_alpha_dict(\"ty i ja\"): ", make_alpha_dict("ty i ja"))
+    print("make_alpha_dict(\"nic z tego\"): ", make_alpha_dict("nic z tego"))
+
+    print()
+    print("Test 7_1_e spłaszczenie list")
+    print("flatten([1, [2, 3], [[4, 5], 6]]): ", flatten([1, [2, 3], [[4, 5], 6]]))
+    print("flatten([1, [[2, 3], [[4, 5], 6]]]): ", flatten([1, [[2, 3], [[4, 5], 6]]]))
+    print("flatten([1, [[[2, 3]], [[4, 5], 6]]]): ", flatten([1, [[[2, 3]], [[4, 5], 6]]]))
