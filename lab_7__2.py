@@ -1,10 +1,12 @@
 from funkcje import *
 
 
+# nieparzyste?
 def is_odd(x):
     return x % 2 != 0
 
 
+# negatywne?
 def is_negative(x):
     return x < 0
 
