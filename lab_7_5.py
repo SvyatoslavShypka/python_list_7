@@ -18,7 +18,7 @@ def make_generator_mem(f):
 
 if __name__ == '__main__':
     print("Test 7_5 make_generator_mem")
-    # Tworzymy generator z memoizacją dla funkcji fibonacci
+    # Tworzymy generator z memoizacją dla funkcji fibonacciego
     fibonacci_generator = make_generator_mem(fibonacci)()
 
     # Testujemy generator przez wyświetlenie kilku pierwszych wartości
