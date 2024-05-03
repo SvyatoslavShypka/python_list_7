@@ -1,9 +1,11 @@
 def liczba(lista):
-    # Używamy funkcji filter() w połączeniu z wyrażeniem lambda, aby zwrócić tylko nieparzyste liczby
+    # Używamy funkcji filter() w połączeniu z wyrażeniem lambda, aby zwrócić tylko parzyste liczby
     # Następnie przekształcamy wynik filter() w listę i zwracamy jej długość, która będzie równa liczbie liczb parzystych
     funkc_lambda = lambda x: x % 2 == 0
     wynik_filtrowany = filter(funkc_lambda, lista)
-    return len(list(wynik_filtrowany))
+    wynik = list(wynik_filtrowany)
+    ilosc_liczb_parzystych = len(wynik)
+    return ilosc_liczb_parzystych
 
 
 def median(lista):

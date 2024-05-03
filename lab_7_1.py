@@ -1,7 +1,7 @@
 from funkcje import *
 
 if __name__ == '__main__':
-    print("Test 7_1_a ilość liczb parzystych")
+    print("Test 7_1_a ilość liczb nieparzystych")
     print("liczba([6, 1, 12]): ", liczba([6, 1, 12]))  # Wynik: 2 (jest dwie liczby parzyste, liczba([6, 1, 12])
     print("liczba([3, 1, 6]): ", liczba([3, 1, 6]))  # Wynik: 1 (jest jedna liczba parzysta)
     print("liczba([3, 1, 9]): ", liczba([3, 1, 9]))  # Wynik: 0 (nie ma liczb parzystych)
